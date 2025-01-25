@@ -1,12 +1,12 @@
-# A generic hands-on deep learning method for anomaly detection in sequential data
+# Demonstration of a generic hands-on deep learning method for anomaly detection in sequential data
 
 ## Overview
 
 The `text_sequence_analyzer.ipynb` notebook demonstrates how unexpected subsequences (anomalies) can be found in sequential data. The example implementation uses [software logs](https://en.m.wikipedia.org/wiki/Logging_(computing)).
 
-Logs can be very helpful in understanding the behavior of a new system, application or environment we have only recently started to work with. The latter situation involves some incremental learning process - from human and ... possibly machine standpoint. That is, machine learning (ML) can be utilized as a powerful tool in log analysis.
+Logs can be very helpful in understanding the behavior of a new system, application or environment we have only recently started to work with. The latter situation involves some incremental learning process - from human and ... possibly machine standpoint. That is, machine learning (ML) can be utilized as a powerful tool in log data analysis.
 
-Log messages, in general, are very specific to the activities being logged and thus can contain numeric data, so anomaly detection methods based on [natural language processing (NLP)](https://en.wikipedia.org/wiki/Natural_language_processing) or [bag-of-words (BoW)](https://en.wikipedia.org/wiki/Bag-of-words_model) can be applied only to a limited extent. For the purpose of genericity, the most important *component* of a log to be analyzed by this notebook's method is the *sequence* of log messages. So, a log is converted to a sequence of *message types* rather than messages.
+Log messages, in general, are very specific to the activities being logged and thus can contain numeric data, so anomaly detection methods based on [natural language processing (NLP)](https://en.wikipedia.org/wiki/Natural_language_processing), including the [bag-of-words (BoW)](https://en.wikipedia.org/wiki/Bag-of-words_model) model, can be applied only to a limited extent. For the purpose of genericity, the most important *component* of a log to be analyzed by this notebook's method is the *sequence* of log messages. So, a log is converted to a sequence of *message types* rather than messages.
 
 |  Log             |
 |------------------|
