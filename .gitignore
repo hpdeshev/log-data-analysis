@@ -1,3 +1,10 @@
 .vscode/
 cpu_env/
 gpu_env/
+
+*.7z
+*.csv
+*.pkl
+*.png
+*.tar.bz2
+*.zip
