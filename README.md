@@ -1,8 +1,8 @@
-# Demonstration of a generic hands-on deep learning method for anomaly detection in sequential data
+# Demonstration of a generic hands-on deep learning method for anomaly detection in log data
 
 ## Overview
 
-The `text_sequence_analyzer.ipynb` notebook demonstrates how unexpected subsequences (anomalies) can be found in sequential data. The example implementation uses [software logs](https://en.m.wikipedia.org/wiki/Logging_(computing)).
+The `text_sequence_analyzer.ipynb` notebook demonstrates how unexpected subsequences (anomalies) can be found in sequential text data. The example implementation uses [software logs](https://en.m.wikipedia.org/wiki/Logging_(computing)).
 
 Logs can be very helpful in understanding the behavior of a new system, application or environment we have only recently started to work with. The latter situation involves some incremental learning process - from human and ... possibly machine standpoint. That is, machine learning (ML) can be utilized as a powerful tool in log data analysis.
 
