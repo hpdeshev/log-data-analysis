@@ -24,27 +24,3 @@ The implementation includes three main tasks:
     1. next log message predictions on new log data;
     1. [optional] if in step 2 a next log message cannot be predicted based on what is learned in step 1, a human intervention is needed to determine whether this is an anomaly or just a new log message to be learned (the unsupervised part);
     1. [optional] if in step 3 are found new normal log messages, go to step 1, else: go to step 2.
-
-## Installation
-
-### With Docker Engine on Ubuntu
-
-$ docker build -t log_data_analysis .
-
-#### For GPU
-
-$ bash docker_gpu_run.sh
-
-#### For CPU
-
-$ bash docker_cpu_run.sh
-
-### Without Docker
-
-#### For GPU
-
-$ python3 -m pip install -r gpu_requirements.txt
-
-#### For CPU
-
-$ python3 -m pip install -r cpu_requirements.txt
