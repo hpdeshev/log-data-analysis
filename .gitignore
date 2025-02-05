@@ -4,6 +4,7 @@ gpu_env/
 
 *.7z
 *.csv
+*.keras
 *.pkl
 *.png
 *.tar.bz2

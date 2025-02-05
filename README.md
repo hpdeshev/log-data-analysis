@@ -14,10 +14,37 @@ Log messages, in general, are very specific to the activities being logged and t
 |  ...             |
 |  Message type n  |
 
-**In particular, this notebook demonstrates a hands-on, generic in its simplicity, method for finding anomalies in a potentially large amount of logs by utilizing a [Recurrent Neural Network (RNN)](https://en.m.wikipedia.org/wiki/Recurrent_neural_network).**
+**In particular, this notebook demonstrates a hands-on, generic in its simplicity, method for finding anomalies in a potentially large amount of logs by utilizing [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering), regular expressions and [recurrent neural network (`RNN`)](https://en.wikipedia.org/wiki/Recurrent_neural_network).**
 
-The selected method is a [semi-supervised](https://en.wikipedia.org/wiki/Weak_supervision) one based on the following step-by-step algorithm:
-1. training process to learn possible log message sequences in already available normal log data (the supervised part);
-2. next log message predictions on new log data;
-3. [optional] if in step 2 a next log message cannot be predicted based on what is learned in step 1, a human intervention is needed to determine whether this is an anomaly or just a new log message to be learned (the unsupervised part);
-4. [optional] if in step 3 are found new normal log messages, go to step 1, else: go to step 2.
+The implementation includes three main tasks:
+1. application of an [unsupervised](https://en.wikipedia.org/wiki/Unsupervised_learning) clusterization method via `k-means clustering`, based on [singular value decomposition (`SVD`)](https://en.wikipedia.org/wiki/Singular_value_decomposition) on potentially high-dimensional sparse data;
+1. transformation of the clustered log message data into unique per-cluster regular expression patterns that represent each log message as input to the `RNN` model;
+1. application of a [semi-supervised](https://en.wikipedia.org/wiki/Weak_supervision) anomaly detection method via `RNN`, based on the following step-by-step algorithm:
+    1. training process to learn possible log message sequences in already available normal log data (the supervised part);
+    1. next log message predictions on new log data;
+    1. [optional] if in step 2 a next log message cannot be predicted based on what is learned in step 1, a human intervention is needed to determine whether this is an anomaly or just a new log message to be learned (the unsupervised part);
+    1. [optional] if in step 3 are found new normal log messages, go to step 1, else: go to step 2.
+
+## Installation
+
+### With Docker Engine on Ubuntu
+
+$ docker build -t log_data_analysis .
+
+#### For GPU
+
+$ bash docker_gpu_run.sh
+
+#### For CPU
+
+$ bash docker_cpu_run.sh
+
+### Without Docker
+
+#### For GPU
+
+$ python3 -m pip install -r gpu_requirements.txt
+
+#### For CPU
+
+$ python3 -m pip install -r cpu_requirements.txt
